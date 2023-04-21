@@ -3,14 +3,27 @@
 import React, {useState} from 'react';
 import { Country, State, City }  from 'country-state-city';
 import Select from "react-select";
+import {useRouter} from "next/navigation";
 
 type option = {
   value: {
-    latitude: number,
-    longitude: number,
+    latitude: string,
+    longitude: string,
     isoCode: string,
   }
   label: string,
+} | null
+
+type cityOption = {
+  value: {
+    latitude: string,
+    longitude: string,
+    isoCode: string,
+    countryCode: string,
+    name: string,
+    stateCode: string,
+  };
+  label: string;
 } | null
 
 const options = Country.getAllCountries().map((country) => ({
@@ -24,6 +37,9 @@ const options = Country.getAllCountries().map((country) => ({
 
 const CityPicker = ({}) => {
   const [selectedCountry, setSelectedCountry] = useState<option>(null);
+  const [selectedCity, setSelectedCity] = useState<cityOption>(null);
+  const router = useRouter();
+
   return (
     <div>
       <Select
