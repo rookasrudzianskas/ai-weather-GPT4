@@ -67,6 +67,19 @@ const WeatherPage = async ({params: {city, lat, long}}: Props) => {
                 />
               )}
             </div>
+
+            <div>
+              <StatCard
+                title={'Wind Speed'}
+                metric={`${results.current_weather.windspeed.toFixed(1)}m/s`}
+                color={'cyan'}
+              />
+              <StatCard
+                title={'Wind Direction'}
+                metric={`${results.current_weather.winddirection.toFixed(1)}°`}
+                color={'violet'}
+              />
+            </div>
           </div>
         </div>
       </div>
