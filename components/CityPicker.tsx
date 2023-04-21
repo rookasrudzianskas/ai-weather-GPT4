@@ -76,6 +76,7 @@ const CityPicker = ({}) => {
             className="text-black"
             value={selectedCity}
             onChange={handleSelectedCity}
+            // @ts-ignore
             options={City.getCitiesOfCountry(selectedCountry.value.isoCode)?.map((state) => ({
               value: {
                 latitude: state.latitude!,
