@@ -38,7 +38,15 @@ const WeatherPage = async ({params: {city, lat, long}}: Props) => {
 
   const dataToSend = cleanData(results, city);
 
-  const res = await fetch(`${getBasePath()}/api/getWeatherSummary`)
+  const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      body: JSON.stringify({
+        weatherData: dataToSend
+      })
+    }
+  })
 
   return (
     <div className="flex flex-col min-h-screen md:flex-row">
