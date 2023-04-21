@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import {Card, Metric, Text} from "@tremor/react";
 
 type Props = {
   title: string;
@@ -31,11 +32,12 @@ type Props = {
     | undefined;
 }
 
-const StatCard = ({}) => {
+const StatCard = ({title, metric, color}: Props) => {
   return (
-    <div>
-
-    </div>
+    <Card>
+      <Text>{title}</Text>
+      <Metric>{metric}</Metric>
+    </Card>
   );
 };
 
