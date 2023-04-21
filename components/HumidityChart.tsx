@@ -23,7 +23,7 @@ const HumidityChart = ({results}: Props) => {
 
   return (
     <Card>
-      <Title>Humidity</Title>
+      <Title>Humidity Levels</Title>
       <AreaChart
         data={data}
         className="mt-6"
