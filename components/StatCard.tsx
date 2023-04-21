@@ -34,7 +34,7 @@ type Props = {
 
 const StatCard = ({title, metric, color}: Props) => {
   return (
-    <Card decorationColor={color}>
+    <Card decoration={"top"} decorationColor={color}>
       <Text>{title}</Text>
       <Metric>{metric}</Metric>
     </Card>
