@@ -7,7 +7,7 @@ type Props = {
   results: Root;
 }
 
-const TempChart = ({results}: Props) => {
+const RainChart = ({results}: Props) => {
   const hourly = results?.hourly.time.map((time, index) => new Date(time).toLocaleString('en-US', {
     hour: 'numeric',
     minute: 'numeric',
@@ -16,23 +16,23 @@ const TempChart = ({results}: Props) => {
 
   const data = hourly.map((hour, index) => ({
     time: Number(hour),
-    "UV Index": results?.hourly.uv_index[index],
-    "Temperature (C)": results?.hourly.temperature_2m[index]
+    "Rain (%)": results?.hourly.precipitation_probability[index],
   }))
 
-  const dateFormatter = (number: number) => `${number} °C`
+  const dateFormatter = (number: number) => `${number} %`
 
   return (
     <Card>
-      <Title>Temperature & UV Index</Title>
+      <Title>Chances of Rain</Title>
       <AreaChart
         data={data}
         className="mt-6"
-        showLegend={true}
+        showLegend
         index={'time'}
-        categories={['Temperature (C)', 'UV Index']}
-        colors={['yellow', 'rose']}
+        categories={['Rain (%)']}
+        colors={['blue']}
         minValue={0}
+        maxValue={100}
         valueFormatter={dateFormatter}
         yAxisWidth={40}
       />
@@ -40,5 +40,5 @@ const TempChart = ({results}: Props) => {
   );
 };
 
-export default TempChart;
+export default RainChart;
 // by Rokas with ❤️
