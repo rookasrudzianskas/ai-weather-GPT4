@@ -16,21 +16,21 @@ const HumidityChart = ({results}: Props) => {
 
   const data = hourly.map((hour, index) => ({
     time: Number(hour),
-    "Rain (%)": results?.hourly.precipitation_probability[index],
+    "Humidity (%)": results?.hourly.relativehumidity_2m[index],
   }))
 
   const dateFormatter = (number: number) => `${number} %`
 
   return (
     <Card>
-      <Title>Chances of Rain</Title>
+      <Title>Humidity</Title>
       <AreaChart
         data={data}
         className="mt-6"
         showLegend
         index={'time'}
-        categories={['Rain (%)']}
-        colors={['blue']}
+        categories={['Humidity (%)']}
+        colors={['teal']}
         minValue={0}
         maxValue={100}
         valueFormatter={dateFormatter}
