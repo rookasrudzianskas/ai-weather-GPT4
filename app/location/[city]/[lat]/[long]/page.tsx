@@ -8,6 +8,7 @@ import TempChart from "@/components/TempChart";
 import RainChart from "@/components/RainChart";
 import HumidityChart from "@/components/HumidityChart";
 import {cleanData} from "@/lib/cleanData";
+import {getBasePath} from "@/lib/getBasePath";
 
 export const revalidate = 60;
 
@@ -37,7 +38,7 @@ const WeatherPage = async ({params: {city, lat, long}}: Props) => {
 
   const dataToSend = cleanData(results, city);
 
-  const res = await fetch(`/`)
+  const res = await fetch(`${getBasePath()}/api/getWeatherSummary`)
 
   return (
     <div className="flex flex-col min-h-screen md:flex-row">
