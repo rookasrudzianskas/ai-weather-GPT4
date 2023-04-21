@@ -53,6 +53,20 @@ const WeatherPage = async ({params: {city, lat, long}}: Props) => {
               metric={`${results.daily.temperature_2m_min[0].toFixed(1)}°C`}
               color={'green'}
             />
+
+            <div>
+              <StatCard
+                title={'UV Index'}
+                metric={`${results.daily.uv_index_max[0].toFixed(1)}`}
+                color={'rose'}
+              />
+              {Number(results.daily.uv_index_max[0].toFixed(1)) > 5 && (
+                <CalloutCard
+                  message={"The UV Index is high, please wear suncream and stay in the shade"}
+                  warning={true}
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>
