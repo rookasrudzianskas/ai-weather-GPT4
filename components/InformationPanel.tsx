@@ -39,6 +39,19 @@ const InformationPanel = ({city, lat, long, results}: Props) => {
           })}
         </p>
       </div>
+      <hr className="mt-10 mb-5" />
+
+      <div>
+        <div>
+          {/* Image */}
+          <div>
+            <p>{results.current_weather.temperature.toFixed(1)}°C</p>
+            <p>
+              {/* Weather code */}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
