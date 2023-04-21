@@ -26,6 +26,8 @@ const WeatherPage = async ({params: {city, lat, long}}: Props) => {
 
   return (
     <div>
+      {/* Information Panel */}
+      {/* Weather Page */}
       Welcome to the Weather page: {city} {lat} {long}
     </div>
   );
