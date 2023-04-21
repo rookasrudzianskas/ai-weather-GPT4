@@ -1,6 +1,6 @@
 import {gql} from "@apollo/client";
 
-const fetchWeatherQueries = gql`
+const fetchWeatherQuery = gql`
     query MyQuery   {
         myQuery(
             $current_weather: String
@@ -82,3 +82,5 @@ const fetchWeatherQueries = gql`
         }
     }
 `;
+
+export default fetchWeatherQuery;
