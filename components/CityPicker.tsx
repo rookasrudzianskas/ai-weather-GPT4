@@ -1,8 +1,17 @@
 'use client';
 
-import React from 'react';
+import React, {useState} from 'react';
 import { Country, State, City }  from 'country-state-city';
 import Select from "react-select";
+
+type option = {
+  value: {
+    latitude: number,
+    longitude: number,
+    isoCode: string,
+  }
+  label: string,
+} | null
 
 const options = Country.getAllCountries().map((country) => ({
   value: {
@@ -14,6 +23,7 @@ const options = Country.getAllCountries().map((country) => ({
 }))
 
 const CityPicker = ({}) => {
+  const [selectedCountry, setSelectedCountry] = useState<option>(null);
   return (
     <div>
       <Select
