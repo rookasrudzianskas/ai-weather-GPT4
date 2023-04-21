@@ -7,6 +7,7 @@ import InformationPanel from "@/components/InformationPanel";
 import TempChart from "@/components/TempChart";
 import RainChart from "@/components/RainChart";
 import HumidityChart from "@/components/HumidityChart";
+import {cleanData} from "@/lib/cleanData";
 
 export const revalidate = 60;
 
@@ -17,6 +18,8 @@ type Props = {
     long: string;
   }
 }
+
+
 
 const WeatherPage = async ({params: {city, lat, long}}: Props) => {
   const client = getClient();
@@ -31,6 +34,10 @@ const WeatherPage = async ({params: {city, lat, long}}: Props) => {
   })
 
   const results: Root = data.myQuery;
+
+  const dataToSend = cleanData(results, city);
+
+  const res = await fetch(`/`)
 
   return (
     <div className="flex flex-col min-h-screen md:flex-row">
