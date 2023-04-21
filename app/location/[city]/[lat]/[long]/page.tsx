@@ -1,6 +1,7 @@
 import React from 'react';
 import {getClient} from "@/apollo-client";
 import fetchWeatherQuery from "@/graphql/queries/fetchWeatherQueries";
+import CalloutCard from "@/components/CalloutCard";
 
 type Props = {
   params: {
@@ -28,14 +29,19 @@ const WeatherPage = async ({params: {city, lat, long}}: Props) => {
     <div>
       {/* Information Panel */}
       <div>
-        <div>
-          <div>
-            <h2>Todays Overview</h2>
-            <p>Last Updated at: {" "}
+        <div className="p-5">
+          <div className="pb-5">
+            <h2 className="text-xl font-bold">Todays Overview</h2>
+            <p className="text-sm text-gray-400">Last Updated at: {" "}
               {new Date(results.current_weather.time).toLocaleString()} ({results.timezone})
             </p>
           </div>
         </div>
+
+        <div>
+          <CalloutCard  message={"This is where the GPT will summarize the data"} />
+        </div>
+
       </div>
       Welcome to the Weather page: {city} {lat} {long}
     </div>
