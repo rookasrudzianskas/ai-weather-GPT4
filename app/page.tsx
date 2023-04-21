@@ -1,6 +1,7 @@
 'use client'
 
 import {Card, Divider, Subtitle, Text} from "@tremor/react";
+import CityPicker from "@/components/CityPicker";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
         <Subtitle className="text-xl text-center">Powered by Open AI, Next.js 13.2, Tailwind css, Tremor 2.0 and More!</Subtitle>
         <Divider className="my-10" />
         <Card className="bg-gradient-to-br from-[#394F68] to-[#183B7E]">
-          {/*  City Picker component */}
+          <CityPicker />
         </Card>
       </Card>
     </div>
