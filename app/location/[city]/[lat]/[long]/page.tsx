@@ -42,8 +42,11 @@ const WeatherPage = async ({params: {city, lat, long}}: Props) => {
           <CalloutCard  message={"This is where the GPT will summarize the data"} />
         </div>
 
+        <div>
+
+        </div>
+
       </div>
-      Welcome to the Weather page: {city} {lat} {long}
     </div>
   );
 };
