@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { Country, State, City }  from 'country-state-city';
 
 const CityPicker = ({}) => {
   return (
