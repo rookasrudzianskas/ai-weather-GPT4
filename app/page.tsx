@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="">
+    <main className="text-6xl">
       Lets build the future together
     </main>
   )
