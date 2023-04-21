@@ -33,6 +33,10 @@ export const cleanData = (data: Root, city: string) => {
       relativehumidity_2m: relativehumidity_2m.slice(0, 24),
       precipitation_probability: precipitation_probability.slice(0, 24),
       uv_index: uv_index.slice(0, 24),
-    }
+    },
+    timezone,
+    hourly_units,
+    timezone_abbreviation,
+    city,
   }
 }
