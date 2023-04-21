@@ -82,6 +82,12 @@ const WeatherPage = async ({params: {city, lat, long}}: Props) => {
             </div>
           </div>
         </div>
+
+        <hr className="mb-5"/>
+
+        <div className="space-y-3">
+          {/* temperature chat */}
+        </div>
       </div>
     </div>
   );
