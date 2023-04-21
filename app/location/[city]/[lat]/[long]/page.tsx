@@ -22,6 +22,8 @@ const WeatherPage = async ({params: {city, lat, long}}: Props) => {
     }
   })
 
+  const results: Root = data.myQuery;
+
   return (
     <div>
       Welcome to the Weather page: {city} {lat} {long}
